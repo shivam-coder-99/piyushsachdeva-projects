@@ -1,6 +1,5 @@
 version: 2.1
 
-
 jobs:
   deploy:
     docker:
@@ -12,7 +11,6 @@ jobs:
           command: |
             ls
             aws s3 sync . s3://$AWS_S3_BUCKET/
-
 
 workflows:
   Production:
