@@ -18,5 +18,5 @@ workflows:
       - deploy:
           filters:
             branches:
-              only: main
+              only: 10weeksCloudOpsChallanges
 
