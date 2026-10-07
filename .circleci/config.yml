@@ -11,4 +11,12 @@ jobs:
           command: |
             # 1. Delete everything inside the bucket
             aws s3 rm s3://$AWS_S3_BUCKET/ --recursive
-            
+
+
+workflows:
+  Production:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: 10weeksCloudOpsChallanges
