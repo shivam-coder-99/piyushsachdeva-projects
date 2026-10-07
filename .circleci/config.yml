@@ -7,15 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Lets deploy thsi application
+          name: Completely empty bucket 
           command: |
-            ls
-            aws s3 sync . s3://$AWS_S3_BUCKET/
-
-workflows:
-  Production:
-    jobs:
-      - deploy:
-          filters:
-            branches:
-              only: 10weeksCloudOpsChallanges
+            # 1. Delete everything inside the bucket
+            aws s3 rm s3://$AWS_S3_BUCKET/ --recursive
+            
